@@ -1,0 +1,14 @@
+---
+- name: Despliegue de aplicacion y reinicio condicional de servicios
+  hosts: produccion
+  tasks:
+    - name: 1. Inyectar configuracion de la base de datos
+      copy:
+        dest: /tmp/db_config.txt
+        content: "Conexion exitosa al entorno: {{ entorno }}"
+      notify: Reiniciar_Servicio_Web
+
+  handlers:
+    - name: Reiniciar_Servicio_Web
+      debug:
+        msg: "=== SIMULANDO REINICIO DE NGINX / APACHE ==="

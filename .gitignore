@@ -1,0 +1,13 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+
+# Recursos generados por la ejecucion
+terraform/servidor_simulado.txt
+ansible/hosts.ini
+
+# Sistema
+Thumbs.db
+.DS_Store
